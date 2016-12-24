@@ -11,4 +11,7 @@ RUN apt-get update && \
     cd install-tl && \
     echo i | ./install-tl && \
     cd .. && \
-    rm -r install-tl*
+    rm -r install-tl* && \
+    export TLPATH=`ls -d /usr/local/texlive/20*/bin/x86_64-linux`
+
+ENV PATH $PATH:$TLPATH
